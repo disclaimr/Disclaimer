@@ -26,3 +26,15 @@ alert{
     from, to { border-color: transparent }
     50% { border-color: rgb(81, 238, 28); }
 }
+
+#agreement {
+    color:rgb(81, 238, 28);
+    background-color: #000000;
+    font-family: "Kode Mono";
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+#agreement:focus {
+    border: none
+}

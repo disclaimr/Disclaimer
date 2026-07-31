@@ -36,16 +36,18 @@ const intervalId = setInterval(function() {
     i++;
 
     if (i === splitted[currentPara].length) {
-        if (currentPara < paras.length-1) {
             paras[currentPara].firstElementChild.classList.remove('cursor');
+            
             i = 0;
             currentPara++;
-            paras[currentPara].firstElementChild.classList.add('cursor')
-        } else {
+        if (currentPara < paras.length) {
+            paras[currentPara].firstElementChild.classList.add('cursor');
+        }
+        if (currentPara === splitted.length) {
             clearInterval(intervalId);
             setTimeout(() => {
-                document.getElementById("following").style.display = "block";
-            }, 2000);
+                document.getElementById("following").style.display = "none";
+            }, 2000);   
         }
         }
 }, 50);
