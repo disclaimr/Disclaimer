@@ -17,9 +17,10 @@ alert{
 }
 
 .cursor {
+    height: 1em;
     border-right: 4px solid rgb(81, 238, 28);
-    animation:
-        blink-caret .75s step-end infinite;
+    vertical-align: bottom;
+    animation: blink-caret .75s step-end infinite;
 }
 
 @keyframes blink-caret {
@@ -28,13 +29,22 @@ alert{
 }
 
 #agreement {
-    color:rgb(81, 238, 28);
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    /*color:rgb(81, 238, 28);
     background-color: #000000;
     font-family: "Kode Mono";
     font-size: 16px;
+    pointer-events: none;
     border: none;
     outline: none;
+    caret-color: transparent;*/
 }
 #agreement:focus {
     border: none
+}
+
+#proceeding {
+    display: none
 }
