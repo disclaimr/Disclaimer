@@ -68,7 +68,7 @@ const intervalId = setInterval(function() { /* setting up setInterval, intervalI
                 }, 10); /*will run after ___ ms*/
         }
         }
-}, 5); /* 50 = 50 milliseconds, or how often the function runs. 1 letter = .05 seconds*/
+}, 40); /* 50 = 50 milliseconds, or how often the function runs. 1 letter = .05 seconds*/
 document.addEventListener("keydown", function(event) { 
             /*"keydown" means the entire page is now listening for a key input
                 function(event) is calling a function, where event is a parameter for the event, 'event' could be anything and we will call on it again
@@ -78,7 +78,7 @@ document.addEventListener("keydown", function(event) {
     if (event.key === "a") {
         document.getElementById("proceeding").style.display = "block";
         setTimeout( () => {
-            window.location.href = "disclaimer.html"
+            window.location.href = "lastseen.html"
         } , 2000);
     }
 })
