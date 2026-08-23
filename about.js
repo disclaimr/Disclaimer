@@ -21,5 +21,9 @@ const IntervalId = setInterval(function() {
 
     if (i === txt.length) {
         clearInterval(IntervalId);
+        document.getElementById("top").style.top = "355px";
+        document.getElementById("title").style.display = "flex";
+        document.getElementById("tabs").style.display = "flex";
+        document.getElementsByClassName("main").style.display = "block";
     }
-}, 1)
+}, 40)

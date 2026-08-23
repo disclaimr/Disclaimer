@@ -78,7 +78,7 @@ document.addEventListener("keydown", function(event) {
     if (event.key === "a") {
         document.getElementById("proceeding").style.display = "block";
         setTimeout( () => {
-            window.location.href = "watchlist.html"
+            window.location.href = "about.html"
         } , 2000);
     }
 })

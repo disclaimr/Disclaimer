@@ -1,3 +1,8 @@
+#oops {
+    display: flex;
+    justify-content: center;
+}
+
 body {
     margin-top: 50;
     background: #f4f4f4;
@@ -24,6 +29,10 @@ body {
 
     }
 
+        #D_pass {
+        width: 200px;
+    }
+
     .cursor {
         height: 1em;
         border-right: 4px solid white;
@@ -36,13 +45,9 @@ body {
         50% { border-color: white; }
     }
 
-    #D_pass {
-        width: 200px;
-    }
-
 /*Title/Tabs*/
     #title {
-        display: none;
+        display: flex;
         height: 100px;
         background: grey;
         color:#f4f4f4;
@@ -52,7 +57,7 @@ body {
         align-items: center;
     }
     #tabs {
-        display: none;
+        display: flex;
     }
     .entry {
         font-weight: bold;
@@ -68,11 +73,17 @@ body {
         align-items: center;
         width: 20%;
         height: 35px;
-        border: dashed;
+        border: black, none, thin;
+            a:link{
+    color: rgb(60, 57, 59);
+}
+a:visited{
+    color:rgb(60, 57, 59);
+    
+}
     }
 /*Content*/
     .main {
-        display: none;
         margin: auto;
         width: 60%;
     }
