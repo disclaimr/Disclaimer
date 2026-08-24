@@ -1,39 +1,57 @@
-#oops {
-    display: flex;
-    justify-content: center;
-}
-
 body {
-    margin-top: 50;
     background: #f4f4f4;
     color:rgb(60, 57, 59);
     font-family: monospace;
     font-size: 12px;
     font-weight: 100;
 }
+a {
+    color: rgb(60, 57, 59);
+    text-decoration: none;
+    padding: 20px 30px;
+}
 
-/*Opening content*/
-    #top{
-        height:500px;
-        display:flex;
-        justify-content: space-evenly;
-        align-items: center;
+/*Only relevant to about.html*/ 
 
+#skip {
+    position: absolute;
+    top: 500px;
+    display:flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 15px;
+    animation: skip 1s step-end infinite;
+}
+
+@keyframes skip {
+        from, to { color: transparent }
+        50% { color: black; }
     }
 
+#top {
+    height: 500px;
+    width: 100%;
+    position: absolute;
+    top: 125px;
+    left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
     #typer {
         background-color: grey;
         color: white;
         width: 50%;
         padding: 5px;
+        font-size: 15px;
 
     }
 
-        #D_pass {
-        width: 200px;
+    #D_pass {
+        width: 270px;
     }
 
-    .cursor {
+  /*  .cursor {
         height: 1em;
         border-right: 4px solid white;
         vertical-align: bottom;
@@ -44,6 +62,7 @@ body {
         from, to { border-color: transparent }
         50% { border-color: white; }
     }
+        */
 
 /*Title/Tabs*/
     #title {
@@ -55,6 +74,9 @@ body {
         font-family: "Kode Mono";
         justify-content: center;
         align-items: center;
+        a{
+            color:#f4f4f4;
+        }
     }
     #tabs {
         display: flex;
@@ -73,17 +95,11 @@ body {
         align-items: center;
         width: 20%;
         height: 35px;
-        border: black, none, thin;
-            a:link{
-    color: rgb(60, 57, 59);
-}
-a:visited{
-    color:rgb(60, 57, 59);
-    
-}
+        border: black, thick
     }
 /*Content*/
     .main {
+        display: block;
         margin: auto;
         width: 60%;
     }
