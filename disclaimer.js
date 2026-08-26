@@ -12,7 +12,6 @@ const txt = `I am neither a successful journalist, nor a known or relevant activ
          Your choice:  ` ; /* Making the text to appear from typewriter effect, using <nl> as a custom version of <br>*/
 
  const splitted = txt.split('<nl>'); /*Splits txt into array of substrings, new substring every time <nl> appears*/
-
  splitted.forEach(function(item, index) { /*.forEach calls a function for each element in an array*/
     const p = document.createElement('p'); /*Creates a paragraph and stores it as the variable p*/
     const span = document.createElement('span'); /*Creates a span and stores it as the variable span*/
