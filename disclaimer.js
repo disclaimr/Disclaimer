@@ -1,10 +1,3 @@
-/*RANDOM THOUGHTS COLLECTOR
-    If I want to incorporate a 'skip' button for this sort of intro page, I could use window.addEventlistener,
-        and create a fuction that if for example space is pressed, the time setting for setInterval could be 
-        switched to like 1 or 10 or something instead of 50, making it run way faster.
-                Include a flashing "press space to skip" text box at the bottom to make this clear
-
-*/
 /* CODE FOR THE TYPEWRITER ANIMATIONS */
 const OutputDiv = document.getElementById('typer'); /*creates OutputDiv, this is the object to be displayed via typewriter effect*/
 
@@ -34,10 +27,21 @@ const txt = `I am neither a successful journalist, nor a known or relevant activ
 
  const paras = OutputDiv.querySelectorAll('p'); /*defines paras which is a nodelist. All objects with class p in OutputDiv go into this nodelist and recieve their own indexes */
 
+let speed = 40;
 let i = 0; /*i is for what?*/
 let currentPara = 0; /* is for what?*/
+let IntervalId = setInterval(typeWriter, speed);
 
-const intervalId = setInterval(function() { /* setting up setInterval, intervalId updates to which run of the function its on*/
+document.addEventListener("keydown", speedUp);
+function speedUp(event) {
+    if (event.code === "Space") {
+        clearInterval(IntervalId);
+        speed = 1;
+        IntervalId = setInterval(typeWriter, speed);
+    }
+}
+
+function typeWriter() { /* setting up setInterval, IntervalId updates to which run of the function its on*/
     paras[currentPara].firstElementChild.textContent += splitted[currentPara][i]; /*THIS IS THE LINE WHERE EVERYTHING HAPPENS*/
     /*paras[currentPara] indexes for whichever paragraph element w/in paras we're on
     .firstElementChild specifically accesses the first child of the paragraph we just focused on, aka the span
@@ -54,21 +58,21 @@ const intervalId = setInterval(function() { /* setting up setInterval, intervalI
             paras[currentPara].firstElementChild.classList.add('cursor'); /*add cursor to the next line since there are more*/
         }
         if (currentPara === paras.length) { /*if that was the last line, so we're ready to clean up and move on*/
-            clearInterval(intervalId); /*resets the intervalId to 0, cancelling the repeating timer/function of setInterval*/ 
-            setTimeout(() => { /*will run the function on the below line AFTER the set amount of time*/
+            clearInterval(IntervalId); /*resets the IntervalId to 0, cancelling the repeating timer/function of setInterval*/ 
+            const typedChar = document.createElement("span"); /*creates a span element for the user's input*/
+            const cursor = document.createElement("span"); /* creates another span element for the cursor*/
+            typedChar.id = "typedChar"; /*adds id tag to typedChar*/
+            cursor.classList.add("cursor"); /*adds cursor to the 'cursor' class, will follow same CSS properties as before*/
+            paras[paras.length - 1].appendChild(typedChar); /*appends the user input to the end of the typewriter program's last line, now that program is done running*/
+            paras[paras.length - 1].appendChild(cursor); /*appends cursor after user input in same way*/
+            document.removeEventListener("keydown", speedUp);
+            document.getElementById("skip").style.display = "none";
+        };
+    }
+}
 
-                /*this sets up the user input and its cursor*/
-                const typedChar = document.createElement("span"); /*creates a span element for the user's input*/
-                const cursor = document.createElement("span"); /* creates another span element for the cursor*/
-                typedChar.id = "typedChar"; /*adds id tag to typedChar*/
-                cursor.classList.add("cursor"); /*adds cursor to the 'cursor' class, will follow same CSS properties as before*/
-                paras[paras.length - 1].appendChild(typedChar); /*appends the user input to the end of the typewriter program's last line, now that program is done running*/
-                paras[paras.length - 1].appendChild(cursor); /*appends cursor after user input in same way*/
 
-                }, 10); /*will run after ___ ms*/
-        }
-        }
-}, 40); /* 50 = 50 milliseconds, or how often the function runs. 1 letter = .05 seconds*/
+/* for once the writing is completed*/
 document.addEventListener("keydown", function(event) { 
             /*"keydown" means the entire page is now listening for a key input
                 function(event) is calling a function, where event is a parameter for the event, 'event' could be anything and we will call on it again
@@ -81,4 +85,11 @@ document.addEventListener("keydown", function(event) {
             window.location.href = "about.html"
         } , 2000);
     }
-})
+    if (event.key === "n") {
+        document.getElementById("failure").style.display = "block";
+        setTimeout( () => {
+            window.location.href = "failure.html"
+        } , 2000);
+    }
+    }
+)

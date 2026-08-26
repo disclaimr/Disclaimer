@@ -34,13 +34,15 @@ function typeWriter() {
         document.getElementById("tabs").style.display = "flex";
         document.getElementById("body").style.display = "block";
         document.getElementById("skip").style.display = "none";
+        document.removeEventListener("keydown", speedUp);
     }
 }
 
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keydown", speedUp);  
+function speedUp(event) {
     if (event.code === "Space") {
         clearInterval(IntervalId);
         speed = 1;
         IntervalId = setInterval(typeWriter, speed);
     }
-});
+}

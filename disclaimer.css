@@ -44,7 +44,24 @@ alert{
 #agreement:focus {
     border: none
 }
-
 #proceeding {
     display: none
 }
+#failure {
+    display: none
+}
+
+#skip {
+    position: absolute;
+    top: 400px;
+    display:flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 15px;
+    animation: skip 1.5s step-end infinite;
+}
+
+@keyframes skip {
+        from, to { color: transparent }
+        50% { color: rgb(81, 238, 28); }
+    }
