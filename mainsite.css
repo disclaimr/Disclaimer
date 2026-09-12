@@ -68,14 +68,13 @@ a {
     #title {
         display: flex;
         height: 100px;
-        background: grey;
-        color:#f4f4f4;
+        color:rgb(60, 57, 59);
         font-size: 35px;
         font-family: "Kode Mono";
         justify-content: center;
         align-items: center;
         a{
-            color:#f4f4f4;
+            color:rgb(60, 57, 59);
         }
     }
     #tabs {
