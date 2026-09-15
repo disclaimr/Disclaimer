@@ -7,12 +7,12 @@ document.getElementById("body").style.display = "none";
 
 const OutputDiv = document.getElementById('typer')
 
-const txt = `Trevor Harms, AKA Disclaimer, is a sporadic idealist whose actions tie most closely to environmental justice 
-but often include and involve social justice concerns as a whole. While their individual efforts pose no immediate 
-danger to the public, their community building attempts have potential to initiate reform of long withstanding social systems. 
-Their actions are plagued with inconsistency and burnout leading to extended periods of inactivity,
-signs of an activist clearly in above their head. Distractivist is currently considered at large in Vancouver, BC,
-and holds ties with sustainability groups in Northwest Colorado.`
+const txt = `Trevor Harms, AKA Disclaimer, is a sporadic idealist whose actions contribute to movements in environmental and social justice. 
+            Disclaimer is committed to non-violent and community methods, and is determined to integrate their circles of outdoor recreation
+             and youth music and culture into their own ideologies. Their commitments are plagued with inconsistency and burnout, signs of a 
+             young activist clearly in above their head. Disclaimer is currently considered at large in Vancouver, BC, and holds ties with 
+             sustainability groups in Northwest Colorado.
+`
 
 const p = document.createElement('p'); /*Creates a paragraph and stores it as the variable p*/
 const span = document.createElement('span'); /*Creates a span and stores it as the variable span*/

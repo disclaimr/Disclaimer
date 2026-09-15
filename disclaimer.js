@@ -1,11 +1,11 @@
 /* CODE FOR THE TYPEWRITER ANIMATIONS */
 const OutputDiv = document.getElementById('typer'); /*creates OutputDiv, this is the object to be displayed via typewriter effect*/
 
-const txt = `I am neither a successful journalist, nor a known or relevant activist.
- Content on this blog is to exercise creativity and is not to be taken seriously. 
- Any problematic opinions are satirical. All 'typos' are intentional. 
- Any illegal activity is staged. <nl>
- Users must agree to the above conditions before continuing. <nl>
+const txt = `I am not a high-profile journalist or activist.
+ By mimicking illegal activity, I hope to showcase the simplicity and accessibility of actions
+  that one can take to join the “fight” for what they care about. 
+  Choices in wording, aesthetic, and anonymity on this blog are primarily for satirical and creative purposes. <nl>
+ Users must agree to the terms of this DISCLAIMER before continuing. <nl>
  ================================================================================================================================================ <nl>
          [a] Accept terms <nl>
          [n] Refuse terms <nl>

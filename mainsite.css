@@ -3,7 +3,7 @@ body {
     color:rgb(60, 57, 59);
     font-family: monospace;
     font-size: 12px;
-    font-weight: 100;
+    font-weight: normal;
 }
 a {
     color: rgb(60, 57, 59);
@@ -102,3 +102,7 @@ a {
         margin: auto;
         width: 60%;
     }
+    .main a {
+    color: revert;
+    text-decoration: revert;
+}
