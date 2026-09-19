@@ -1,9 +1,10 @@
-/* CODE FOR THE TYPEWRITER ANIMATIONS */
-document.getElementById("title").style.display = "none";
-document.getElementById("tabs").style.display = "none";
-document.getElementById("body").style.display = "none";
-
-
+/* I NEED TO GET BACK TO CLASS BUT I HAVE AN IDEA
+        I should add a different event listener for a multiple keydown event for a "password"
+         that is ongoing while in any page of the site, if this sequence goes through,
+          the user will be taken to Disclaimer.secret */
+document.getElementById("title").style.visibility = "hidden";
+document.getElementById("tabs").style.visibility = "hidden";
+document.getElementById("body").style.visibility = "hidden";
 
 const OutputDiv = document.getElementById('typer')
 
@@ -30,11 +31,22 @@ function typeWriter() {
 
     if (i === txt.length) {
         clearInterval(IntervalId);
-        document.getElementById("title").style.display = "flex";
-        document.getElementById("tabs").style.display = "flex";
-        document.getElementById("body").style.display = "block";
-        document.getElementById("skip").style.display = "none";
+        document.getElementById("title").style.visibility = "visible";
+        document.getElementById("tabs").style.visibility = "visible";
+        document.getElementById("body").style.visibility = "visible";
+        document.getElementById("skip").style.visibility = "hidden";
         document.removeEventListener("keydown", speedUp);
+
+        let secretpass = document.getElementById("secretpass"); /*calls up the secret password span*/
+        document.addEventListener("keydown", pass);
+        function pass(event) {
+            secretpass.textContent += event.key;
+            console.log(secretpass.textContent)
+            if (secretpass.textContent === "password") {
+                setTimeout( () => {
+                    window.location.href = "secret.html"} , 100)
+            }
+        }
     }
 }
 

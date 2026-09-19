@@ -1,3 +1,13 @@
+/*Content/Main Formatting*/
+    .main {
+        display: block;
+        margin: auto;
+        width: 60%;
+    }
+    .main a {
+    color: revert;
+    text-decoration: revert;
+}
 body {
     background: #f4f4f4;
     color:rgb(60, 57, 59);
@@ -8,14 +18,49 @@ body {
 a {
     color: rgb(60, 57, 59);
     text-decoration: none;
-    padding: 20px 30px;
+    padding: 10px 10px;
+    margin: -1em;
 }
+    .entry {
+        font-weight: bold;
+    }
+/*Title/Tabs*/
+    #title {
+        display: flex;
+        height: 100px;
+        color:rgb(60, 57, 59);
+        font-size: 35px;
+        font-family: "Kode Mono";
+        justify-content: center;
+        align-items: center;
+        a{
+            color:rgb(60, 57, 59);
+        }
+    }
+    #tabs {
+        display: flex;
+    }
+    .tabs {
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .page {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        height: 35px;
+        border: black, thick
+    }
+    #secretpass {
+        visibility: hidden;
+        }
 
 /*Only relevant to about.html*/ 
 
 #skip {
-    position: absolute;
-    top: 500px;
+    top: -650px;
     display:flex;
     justify-content: center;
     width: 100%;
@@ -29,10 +74,8 @@ a {
     }
 
 #top {
-    height: 500px;
     width: 100%;
-    position: absolute;
-    top: 125px;
+    margin-top: 100px;
     left: 0;
     display: flex;
     justify-content: space-evenly;
@@ -63,46 +106,3 @@ a {
         50% { border-color: white; }
     }
         */
-
-/*Title/Tabs*/
-    #title {
-        display: flex;
-        height: 100px;
-        color:rgb(60, 57, 59);
-        font-size: 35px;
-        font-family: "Kode Mono";
-        justify-content: center;
-        align-items: center;
-        a{
-            color:rgb(60, 57, 59);
-        }
-    }
-    #tabs {
-        display: flex;
-    }
-    .entry {
-        font-weight: bold;
-    }
-    .tabs {
-        margin-top: 5px;
-        display: flex;
-        justify-content: space-evenly;
-    }
-    .page {
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        width: 20%;
-        height: 35px;
-        border: black, thick
-    }
-/*Content*/
-    .main {
-        display: block;
-        margin: auto;
-        width: 60%;
-    }
-    .main a {
-    color: revert;
-    text-decoration: revert;
-}

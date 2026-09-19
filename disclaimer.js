@@ -58,14 +58,15 @@ function typeWriter() { /* setting up setInterval, IntervalId updates to which r
         }
         if (currentPara === paras.length) { /*if that was the last line, so we're ready to clean up and move on*/
             clearInterval(IntervalId); /*resets the IntervalId to 0, cancelling the repeating timer/function of setInterval*/ 
+            document.removeEventListener("keydown", speedUp);
+            document.getElementById("skip").style.display = "none"; /*Cleaning up the space for speed up stuff*/
+                            /*OK NOW we're gonna set up the user input acceptor*/
             const typedChar = document.createElement("span"); /*creates a span element for the user's input*/
             const cursor = document.createElement("span"); /* creates another span element for the cursor*/
             typedChar.id = "typedChar"; /*adds id tag to typedChar*/
             cursor.classList.add("cursor"); /*adds cursor to the 'cursor' class, will follow same CSS properties as before*/
             paras[paras.length - 1].appendChild(typedChar); /*appends the user input to the end of the typewriter program's last line, now that program is done running*/
             paras[paras.length - 1].appendChild(cursor); /*appends cursor after user input in same way*/
-            document.removeEventListener("keydown", speedUp);
-            document.getElementById("skip").style.display = "none";
         };
     }
 }
