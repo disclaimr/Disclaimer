@@ -4,6 +4,7 @@ const OutputDiv = document.getElementById('typer'); /*creates OutputDiv, this is
 const txt = `I am not a high-profile journalist or activist.
  By mimicking illegal activity, I hope to showcase the simplicity and accessibility of actions
   that one can take to join the “fight” for what they care about. 
+  By no means do my caricatured or radicalized depictions or "warnings" relating to guests on this blog represent their real ideologies or identities.
   Choices in wording, aesthetic, and anonymity on this blog are primarily for satirical and creative purposes. <nl>
  Users must agree to the terms of this DISCLAIMER before continuing. <nl>
  ================================================================================================================================================ <nl>
@@ -26,7 +27,7 @@ const txt = `I am not a high-profile journalist or activist.
 
  const paras = OutputDiv.querySelectorAll('p'); /*defines paras which is a nodelist. All objects with class p in OutputDiv go into this nodelist and recieve their own indexes */
 
-let speed = 40;
+let speed = 35;
 let i = 0; /*i is for what?*/
 let currentPara = 0; /* is for what?*/
 let IntervalId = setInterval(typeWriter, speed);

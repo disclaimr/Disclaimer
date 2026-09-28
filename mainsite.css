@@ -94,7 +94,7 @@ a {
         width: 270px;
     }
 
-  /*  .cursor {
+    /*.cursor {
         height: 1em;
         border-right: 4px solid white;
         vertical-align: bottom;
@@ -104,5 +104,5 @@ a {
     @keyframes blink-caret {
         from, to { border-color: transparent }
         50% { border-color: white; }
-    }
-        */
+    }*/
+        
