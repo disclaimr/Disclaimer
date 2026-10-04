@@ -58,7 +58,6 @@ alert{
     justify-content: center;
     width: 100%;
     font-size: 15px;
-    animation: skip 1.5s step-end infinite;
 }
 
 @keyframes skip {

@@ -1,6 +1,8 @@
 /* CODE FOR THE TYPEWRITER ANIMATIONS */
-const OutputDiv = document.getElementById('typer'); /*creates OutputDiv, this is the object to be displayed via typewriter effect*/
 
+/*GIANT TYPEWRITER SETUP*/
+//#region
+const OutputDiv = document.getElementById('typer'); /*creates OutputDiv, this is the object to be displayed via typewriter effect*/
 const txt = `I am not a high-profile journalist or activist.
  By mimicking illegal activity, I hope to showcase the simplicity and accessibility of actions
   that one can take to join the “fight” for what they care about. 
@@ -13,6 +15,7 @@ const txt = `I am not a high-profile journalist or activist.
          Your choice:  ` ; /* Making the text to appear from typewriter effect, using <nl> as a custom version of <br>*/
 
  const splitted = txt.split('<nl>'); /*Splits txt into array of substrings, new substring every time <nl> appears*/
+ 
  splitted.forEach(function(item, index) { /*.forEach calls a function for each element in an array*/
     const p = document.createElement('p'); /*Creates a paragraph and stores it as the variable p*/
     const span = document.createElement('span'); /*Creates a span and stores it as the variable span*/
@@ -30,16 +33,8 @@ const txt = `I am not a high-profile journalist or activist.
 let speed = 35;
 let i = 0; /*i is for what?*/
 let currentPara = 0; /* is for what?*/
-let IntervalId = setInterval(typeWriter, speed);
 
-document.addEventListener("keydown", speedUp);
-function speedUp(event) {
-    if (event.code === "Space") {
-        clearInterval(IntervalId);
-        speed = 1;
-        IntervalId = setInterval(typeWriter, speed);
-    }
-}
+/*SETTING UP THE TYPEWRITER FUNCTION ITSELF*/
 
 function typeWriter() { /* setting up setInterval, IntervalId updates to which run of the function its on*/
     paras[currentPara].firstElementChild.textContent += splitted[currentPara][i]; /*THIS IS THE LINE WHERE EVERYTHING HAPPENS*/
@@ -59,8 +54,6 @@ function typeWriter() { /* setting up setInterval, IntervalId updates to which r
         }
         if (currentPara === paras.length) { /*if that was the last line, so we're ready to clean up and move on*/
             clearInterval(IntervalId); /*resets the IntervalId to 0, cancelling the repeating timer/function of setInterval*/ 
-            document.removeEventListener("keydown", speedUp);
-            document.getElementById("skip").style.display = "none"; /*Cleaning up the space for speed up stuff*/
                             /*OK NOW we're gonna set up the user input acceptor*/
             const typedChar = document.createElement("span"); /*creates a span element for the user's input*/
             const cursor = document.createElement("span"); /* creates another span element for the cursor*/
@@ -71,9 +64,32 @@ function typeWriter() { /* setting up setInterval, IntervalId updates to which r
         };
     }
 }
+//#endregion
 
+/*SPACEBAR TO START DISCLAIMER*/
+document.addEventListener("keydown", Disclaim);
+function Disclaim(event) {
+    if (event.code === "Space") {
+        document.removeEventListener("keydown", Disclaim);
+        IntervalId = setInterval(typeWriter, speed);
+        document.addEventListener("keydown", speedUp); 
+        document.getElementById("skip").textContent = "Press SpaceBar to speed up"
+        document.getElementById("skip").style.animation =  "skip 1.5s step-end infinite";       
+    }
+}
 
-/* for once the writing is completed*/
+/*SPEEDUP FUNCTION*/
+function speedUp(event) {
+    if (event.code === "Space") {
+        clearInterval(IntervalId);
+        speed = 1;
+        IntervalId = setInterval(typeWriter, speed);
+        document.removeEventListener("keydown", speedUp);
+        document.getElementById("skip").style.display = "none";
+    }
+}
+
+/* FOR ONCE WRITING IS COMPLETED*/
 document.addEventListener("keydown", function(event) { 
             /*"keydown" means the entire page is now listening for a key input
                 function(event) is calling a function, where event is a parameter for the event, 'event' could be anything and we will call on it again
