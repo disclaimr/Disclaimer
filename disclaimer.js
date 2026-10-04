@@ -54,6 +54,8 @@ function typeWriter() { /* setting up setInterval, IntervalId updates to which r
         }
         if (currentPara === paras.length) { /*if that was the last line, so we're ready to clean up and move on*/
             clearInterval(IntervalId); /*resets the IntervalId to 0, cancelling the repeating timer/function of setInterval*/ 
+            document.removeEventListener("keydown", speedUp);
+            document.getElementById("skip").style.display = "none";
                             /*OK NOW we're gonna set up the user input acceptor*/
             const typedChar = document.createElement("span"); /*creates a span element for the user's input*/
             const cursor = document.createElement("span"); /* creates another span element for the cursor*/
@@ -84,8 +86,6 @@ function speedUp(event) {
         clearInterval(IntervalId);
         speed = 1;
         IntervalId = setInterval(typeWriter, speed);
-        document.removeEventListener("keydown", speedUp);
-        document.getElementById("skip").style.display = "none";
     }
 }
 
