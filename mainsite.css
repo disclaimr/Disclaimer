@@ -15,6 +15,9 @@ body {
     font-size: 12px;
     font-weight: normal;
 }
+mark {
+    background: black;
+}
 a {
     color: rgb(60, 57, 59);
     text-decoration: none;
@@ -67,12 +70,10 @@ a {
     font-size: 15px;
     animation: skip 1s step-end infinite;
 }
-
-@keyframes skip {
-        from, to { color: transparent }
-        50% { color: black; }
-    }
-
+.typemark{
+    background:white;
+    color: transparent;
+}
 #top {
     width: 100%;
     margin-top: 100px;
@@ -89,20 +90,7 @@ a {
         font-size: 15px;
 
     }
-
     #D_pass {
         width: 270px;
     }
-
-    /*.cursor {
-        height: 1em;
-        border-right: 4px solid white;
-        vertical-align: bottom;
-        animation: blink-caret .75s step-end infinite;
-    }
-
-    @keyframes blink-caret {
-        from, to { border-color: transparent }
-        50% { border-color: white; }
-    }*/
         
