@@ -1,3 +1,6 @@
+/* IDEA IDEA IDEA
+    Make the photo of me will my eyes blacked out a rotating array of my friends with blacked out eyes, which stops onto the photo of me when the animation is complete*/
+
 document.getElementById("title").style.visibility = "hidden";
 document.getElementById("tabs").style.visibility = "hidden";
 document.getElementById("body").style.visibility = "hidden";
